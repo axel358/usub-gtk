@@ -1,0 +1,9 @@
+Package: usub
+Version: 0.1
+Architecture: all
+Maintainer: Axel358 <axel358@yahoo.com>
+Installed-Size: 52
+Depends: python3, python3-gi, python3-bs4, python3-urllib3, python3-requests
+Section: custom
+Priority: optional
+Description: Download subtitles for YouTube videos

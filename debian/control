@@ -1,0 +1,15 @@
+Source: usub
+Section: custom
+Priority: optional
+Maintainer: Axel358 <axel358@yahoo.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+
+Package: usub
+Architecture: all
+Description: Download subtitles for YouTube videos
+Depends: python3,
+         python3-gi,
+         python3-bs4,
+         python3-urllib3,
+         python3-requests

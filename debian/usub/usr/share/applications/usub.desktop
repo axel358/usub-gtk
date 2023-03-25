@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=USub
+Comment=Download subtitles for YouTube videos
+Exec=usub
+Icon=cu.axel.Usub
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=GTK;Utility;Core;
+Keywords=download;subtitle;
+StartupNotify=false

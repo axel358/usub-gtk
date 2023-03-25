@@ -88,6 +88,7 @@
                 <property name="margin-start">12</property>
                 <property name="margin-end">12</property>
                 <property name="margin-top">6</property>
+                <property name="margin-bottom">12</property>
                 <property name="shadow-type">in</property>
                 <child>
                   <object class="GtkViewport">
@@ -152,7 +153,7 @@
             <property name="halign">center</property>
             <property name="valign">center</property>
             <property name="orientation">vertical</property>
-            <property name="spacing">24</property>
+            <property name="spacing">12</property>
             <child>
               <object class="GtkImage">
                 <property name="width-request">120</property>
@@ -185,6 +186,7 @@
             </child>
             <child>
               <object class="GtkScrolledWindow">
+                <property name="width-request">350</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="hscrollbar-policy">never</property>

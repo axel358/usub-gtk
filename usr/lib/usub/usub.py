@@ -14,14 +14,14 @@ class USub():
     def __init__(self):
 
         icon_theme = Gtk.IconTheme.get_default()
-        icon_theme.append_search_path('./icons')
+        icon_theme.append_search_path('/usr/share/usub/icons')
 
         css_provider = Gtk.CssProvider()
-        css_provider.load_from_path('style.css')
+        css_provider.load_from_path('/usr/share/usub/style.css')
         Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
         self.builder = Gtk.Builder()
-        self.builder.add_from_file('window.ui')
+        self.builder.add_from_file('/usr/share/usub/window.ui')
 
         self.window = self.builder.get_object('main_window')
         self.window.set_icon_name("usub")
