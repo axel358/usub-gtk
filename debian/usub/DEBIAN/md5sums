@@ -1,9 +1,9 @@
 07e179962242f7cb78077f9dee93d30e  usr/bin/usub
-c77c53f4c72b3cd7f64dcb33f5679375  usr/lib/usub/usub.py
-16e80bef92aa26862fb12cfe7de14ca4  usr/share/applications/usub.desktop
+1fdce122a6c332ce8db902aafaed5440  usr/lib/usub/usub.py
+d4066f93c1b570c1086a5d36689078e4  usr/share/applications/usub.desktop
 0da64595bee501911b0422dd24f1b2ab  usr/share/doc/usub/changelog.gz
 565a0ce8491122df8e196c50d09a823f  usr/share/doc/usub/copyright
-73141be78fec732ad34ecf2922504408  usr/share/icons/hicolor/scalable/apps/cu.axel.Usub.svg
+73141be78fec732ad34ecf2922504408  usr/share/icons/hicolor/scalable/apps/cu.axel.USub.svg
 37e0e32f5a78f784d9fc7fcc8a6203dd  usr/share/usub/icons/hicolor/scalable/actions/download-symbolic.svg
 9ccb3274f562af4693444c8ceade527b  usr/share/usub/icons/hicolor/scalable/actions/error-symbolic.svg
 510fe439603796b6d003e670ebfee7b7  usr/share/usub/icons/hicolor/scalable/actions/subtitle-symbolic.svg

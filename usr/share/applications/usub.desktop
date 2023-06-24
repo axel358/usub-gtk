@@ -2,7 +2,7 @@
 Name=USub
 Comment=Download subtitles for YouTube videos
 Exec=usub
-Icon=cu.axel.Usub
+Icon=cu.axel.USub
 Terminal=false
 Type=Application
 Encoding=UTF-8

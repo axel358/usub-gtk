@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import gi
+import sys
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gio, Gdk, GLib
 import urllib.parse as urlparse
@@ -9,24 +10,22 @@ from bs4 import BeautifulSoup
 from youtube_transcript_api import YouTubeTranscriptApi as yt_api
 from youtube_transcript_api.formatters import WebVTTFormatter
 
-class USub():
+class USub(Gtk.Application):
+    DATA_DIR = '/usr/share/usub/'
+    APP_ID = 'cu.axel.USub'
 
-    def __init__(self):
+    def __init__(self, *args, **kargs):
+        super().__init__(*args, application_id=self.APP_ID, **kargs)
 
         icon_theme = Gtk.IconTheme.get_default()
-        icon_theme.append_search_path('/usr/share/usub/icons')
+        icon_theme.append_search_path(self.DATA_DIR + 'icons')
 
         css_provider = Gtk.CssProvider()
-        css_provider.load_from_path('/usr/share/usub/style.css')
+        css_provider.load_from_path(self.DATA_DIR + 'style.css')
         Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
-        self.builder = Gtk.Builder()
-        self.builder.add_from_file('/usr/share/usub/window.ui')
-
-        self.window = self.builder.get_object('main_window')
-        self.window.set_icon_name("usub")
-        self.window.set_position(Gtk.WindowPosition.CENTER)
-        self.window.connect("destroy", Gtk.main_quit)
+        self.builder = Gtk.Builder.new_from_file(self.DATA_DIR + 'window.ui')
+        self.window = None
 
         self.main_stack = self.builder.get_object('main_stack')
         self.error_label = self.builder.get_object('error_label')
@@ -36,6 +35,12 @@ class USub():
         self.title_label = self.builder.get_object('title_label')
 
         self.builder.connect_signals(self)
+
+    def do_activate(self):
+        if not self.window:
+            self.window = self.builder.get_object('main_window')
+            self.window.set_application(self)
+
         self.window.show_all()
 
     def parse_url(self, widget):
@@ -168,12 +173,12 @@ class USub():
         dialog.props.version = "0.1.0"
         dialog.props.authors = ['Axel358']
         dialog.props.copyright = 'GPL-3'
-        dialog.props.logo_icon_name = 'cu.axel.Usub'
+        dialog.props.logo_icon_name = self.APP_ID
         dialog.props.comments = 'Download subs for youtube vids'
         dialog.props.website = 'https://github.com/axel358/usub'
         dialog.set_transient_for(self.window)
         dialog.show()
 
 if __name__ == "__main__":
-    USub()
-    Gtk.main()
+    app = USub()
+    app.run(sys.argv)
